@@ -66,35 +66,40 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SMUNICIPAL'] !== null ? Autolinker.link(String(feature.properties['SMUNICIPAL'])) : '') + '</td>\
+                        <td colspan="2"><strong>Municipality: </strong>' + (feature.properties['SMUNICIPAL'] !== null ? Autolinker.link(String(feature.properties['SMUNICIPAL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FKLWARDID'] !== null ? Autolinker.link(String(feature.properties['FKLWARDID'])) : '') + '</td>\
+                        <td colspan="2"><strong>Ward:</strong> ' + (feature.properties['FKLWARDID'] !== null ? Autolinker.link(String(feature.properties['FKLWARDID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PKLVDNUMBE'] !== null ? Autolinker.link(String(feature.properties['PKLVDNUMBE'])) : '') + '</td>\
+                        <td colspan="2"><strong>VD: </strong><br />' + (feature.properties['PKLVDNUMBE'] !== null ? Autolinker.link(String(feature.properties['PKLVDNUMBE'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">1st place: ' + (feature.properties['kzn_swing_Party1'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Party1'])) : '') + '</td>\
+                        <th scope="row"><strong>Party1</strong></th>\
+                        <td>' + (feature.properties['kzn_swing_Party1'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Party1'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">1st place votes: ' + (feature.properties['kzn_swing_Votes1'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Votes1'])) : '') + '</td>\
+                        <th scope="row"><strong>Votes</strong></th>\
+                        <td>' + (feature.properties['kzn_swing_Votes1'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Votes1'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">2nd place: ' + (feature.properties['kzn_swing_Party2'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Party2'])) : '') + '</td>\
+                        <th scope="row"><strong>Party2</strong></th>\
+                        <td>' + (feature.properties['kzn_swing_Party2'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Party2'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">2nd place votes: ' + (feature.properties['kzn_swing_Votes2'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Votes2'])) : '') + '</td>\
+                        <th scope="row"><strong>Votes2</strong></th>\
+                        <td>' + (feature.properties['kzn_swing_Votes2'] !== null ? Autolinker.link(String(feature.properties['kzn_swing_Votes2'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">Margin: ' + (feature.properties['kzn_swing_perc_difference'] !== null ? Autolinker.link(String(Math.round(feature.properties['kzn_swing_perc_difference'] * 100))) + '%' : '') + '</td>\
+                        <th scope="row"><strong>Margin</strong></th>\
+                        <td>' + (feature.properties['kzn_swing_perc_difference'] !== null ? Autolinker.link(String(Math.round(feature.properties['kzn_swing_perc_difference'] * 100))) : '') + '%</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
         function style_savd2014_0_0(feature) {
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.000000 && feature.properties['kzn_swing_perc_difference'] <= 0.050000 ) {
+            if (feature.properties['kzn_swing_perc_difference'] >= 0.000000 && feature.properties['kzn_swing_perc_difference'] <= 0.200000 ) {
                 return {
                 pane: 'pane_savd2014_0',
                 opacity: 1,
@@ -108,7 +113,7 @@
                 fillColor: 'rgba(255,0,0,1.0)',
             }
             }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.050000 && feature.properties['kzn_swing_perc_difference'] <= 0.100000 ) {
+            if (feature.properties['kzn_swing_perc_difference'] >= 0.200000 && feature.properties['kzn_swing_perc_difference'] <= 0.400000 ) {
                 return {
                 pane: 'pane_savd2014_0',
                 opacity: 1,
@@ -119,10 +124,10 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,13,13,1.0)',
+                fillColor: 'rgba(255,135,135,1.0)',
             }
             }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.100000 && feature.properties['kzn_swing_perc_difference'] <= 0.150000 ) {
+            if (feature.properties['kzn_swing_perc_difference'] >= 0.400000 && feature.properties['kzn_swing_perc_difference'] <= 0.600000 ) {
                 return {
                 pane: 'pane_savd2014_0',
                 opacity: 1,
@@ -133,10 +138,10 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,26,26,1.0)',
+                fillColor: 'rgba(255,189,189,1.0)',
             }
             }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.150000 && feature.properties['kzn_swing_perc_difference'] <= 0.200000 ) {
+            if (feature.properties['kzn_swing_perc_difference'] >= 0.600000 && feature.properties['kzn_swing_perc_difference'] <= 0.800000 ) {
                 return {
                 pane: 'pane_savd2014_0',
                 opacity: 1,
@@ -147,220 +152,10 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,40,40,1.0)',
+                fillColor: 'rgba(255,234,234,1.0)',
             }
             }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.200000 && feature.properties['kzn_swing_perc_difference'] <= 0.250000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,53,53,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.250000 && feature.properties['kzn_swing_perc_difference'] <= 0.300000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,67,67,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.300000 && feature.properties['kzn_swing_perc_difference'] <= 0.350000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,80,80,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.350000 && feature.properties['kzn_swing_perc_difference'] <= 0.400000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,94,94,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.400000 && feature.properties['kzn_swing_perc_difference'] <= 0.450000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,107,107,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.450000 && feature.properties['kzn_swing_perc_difference'] <= 0.500000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,121,121,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.500000 && feature.properties['kzn_swing_perc_difference'] <= 0.550000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,134,134,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.550000 && feature.properties['kzn_swing_perc_difference'] <= 0.600000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,148,148,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.600000 && feature.properties['kzn_swing_perc_difference'] <= 0.650000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,161,161,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.650000 && feature.properties['kzn_swing_perc_difference'] <= 0.700000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,175,175,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.700000 && feature.properties['kzn_swing_perc_difference'] <= 0.750000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,188,188,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.750000 && feature.properties['kzn_swing_perc_difference'] <= 0.800000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,202,202,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.800000 && feature.properties['kzn_swing_perc_difference'] <= 0.850000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,215,215,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.850000 && feature.properties['kzn_swing_perc_difference'] <= 0.900000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,229,229,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.900000 && feature.properties['kzn_swing_perc_difference'] <= 0.950000 ) {
-                return {
-                pane: 'pane_savd2014_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,242,242,1.0)',
-            }
-            }
-            if (feature.properties['kzn_swing_perc_difference'] >= 0.950000 && feature.properties['kzn_swing_perc_difference'] <= 1.000000 ) {
+            if (feature.properties['kzn_swing_perc_difference'] >= 0.800000 && feature.properties['kzn_swing_perc_difference'] <= 1.000000 ) {
                 return {
                 pane: 'pane_savd2014_0',
                 opacity: 1,
